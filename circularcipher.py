@@ -27,12 +27,12 @@ def encrypt(key, plaintext):
             # Number them to be shuffled and shuffle
             digit = int(str(key)[c-1:c])
 
-            circular = c + digit
-            if circular > len(plaintext):
-                circular = c - digit
+            if digit % 2 == 0:
+                circular = c * digit - c
+            else:
+                circular = c % digit + c
             while circular in shadow and count == 0:
-                circular += 1
-        
+                circular = circular + c
             cc[circular] = letter
             shadow.append(circular)
             c += 1
@@ -40,10 +40,6 @@ def encrypt(key, plaintext):
         count += 1
     else:
         c = 1
-        # Remove dupes
-        fliped = { v:k for k,v in cc.items() }
-        cc = { v:k for k,v in fliped.items() }
-        
         cc = collections.OrderedDict(sorted(cc.items()))
         cc = dict(cc)
     
@@ -60,4 +56,4 @@ def encrypt(key, plaintext):
     print(cc)
     #
 
-encrypt(195820419435345347, "Iamabotfdfdsfsdf")
+encrypt(3903760349295740270276026607474574879758675463634357462665443634363, "bbbbbbbbbbbbbbbbabcdefghijklmnophellomyaaaaaaaaaaaaa")
