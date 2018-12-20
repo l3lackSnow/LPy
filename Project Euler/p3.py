@@ -13,9 +13,11 @@ def largestPrime(n = 600851475143):
         while n % i == 0 and i > 1:
             factors.append(i)
             n = n / i
+            if n == 1:
+              return factors
             
     factors = list(set(factors))
     factors.sort()
-    print(factors)
+    return factors
 
 largestPrime()
