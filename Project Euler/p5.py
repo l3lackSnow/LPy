@@ -1,8 +1,6 @@
 # Smallest multiple
 # Problem 5
 
-# Kinda slow rn
-
 """
 
 2520 is the smallest number that can be divided 
