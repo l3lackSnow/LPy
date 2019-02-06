@@ -2,8 +2,8 @@
 #VladSaturnian, who has at most 6 antenna and at least 2 eyes;
 #GraemeMercurian, who has at most 2 antenna and at most 3 eyes.
 
-antenna = int(input())
-eyes = int(input())
+antenna = int(input("How many antennas?"))
+eyes = int(input("How many eyes?))
 
 t = False
 v = False
